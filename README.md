@@ -16,18 +16,19 @@
 ### Association
 
 - has_many :items
+- has_one :order
 
 ## payments テーブル
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
-| order           | references | null: false, foreign_key: true |
+| order            | references | null: false, foreign_key: true |
 | post_code        | string     | null: false                    |
-| prefecture_id    | string     | null: false                    |
+| prefecture_id    | integer    | null: false                    |
 | city             | string     | null: false                    |
 | address          | string     | null: false                    |
 | building_name    | string     |                                |
-| phone_number     | string     |                                |
+| phone_number     | string     | null: false                    |
 
 ### Association
 
@@ -49,9 +50,7 @@
 ### Association
 
 - belongs_to :user
-- belongs_to :category
 - has_one :order
-- belongs_to_active_hash :prefecture
 
 ## orders テーブル
 
