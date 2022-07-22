@@ -15,18 +15,13 @@
 
 ### Association
 
-- has_many :items dependent: :destroy
-- belongs_to :payment dependent: :destroy
+- has_many :items
 
 ## payments テーブル
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
-| orders           | references | null: false, foreign_key: true |
-| family_name      | string     | null: false                    |
-| first_name       | string     | null: false                    |
-| family_name_kana | string     | null: false                    |
-| first_name_kana  | string     | null: false                    |
+| order           | references | null: false, foreign_key: true |
 | post_code        | string     | null: false                    |
 | prefecture_id    | string     | null: false                    |
 | city             | string     | null: false                    |
@@ -48,13 +43,14 @@
 | shipping_cost_id | integer    | null: false                    |
 | shipping_day_id  | integer    | null: false                    |
 | prefecture_id    | integer    | null: false                    |
-| category_id      | integer    | null: false, foreign_key: true |
-| user_id          | references | null: false, foreign_key: true |
+| category_id      | integer    | null: false                    |
+| user             | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :user dependent: :destroy
-- belongs_to :category dependent: :destroy
+- belongs_to :user
+- belongs_to :category
+- has_one :order
 - belongs_to_active_hash :prefecture
 
 ## orders テーブル
