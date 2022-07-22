@@ -16,7 +16,7 @@
 ### Association
 
 - has_many :items
-- has_one :order
+- has_many :orders
 
 ## payments テーブル
 
@@ -46,6 +46,7 @@
 | prefecture_id    | integer    | null: false                    |
 | category_id      | integer    | null: false                    |
 | user             | references | null: false, foreign_key: true |
+| price            | integer    | null: false                    |
 
 ### Association
 
@@ -62,5 +63,5 @@
 ### Association
 
 - belongs_to :user
-- belongs_to item
+- belongs_to :item
 - has_one :payment
