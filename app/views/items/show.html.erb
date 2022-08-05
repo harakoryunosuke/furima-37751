@@ -16,7 +16,7 @@
     </div>
     <div class="item-price-box">
       <span class="item-price">
-        <%= @item.price %>円
+        ¥ <%= @item.price %>
       </span>
       <span class="item-postage">
         <%= "配送料負担" %>
@@ -24,7 +24,7 @@
     </div>
 
     <% if user_signed_in? %>
-      <% if current_user.id == @item.user_id && @item.order.nil? %>
+      <% if current_user.id == @item.user_id && %>
         <%= link_to "商品の編集", "#", method: :get, class: "item-red-btn" %>
         <p class="or-text">or</p>
         <%= link_to "削除", "#", method: :delete, class:"item-destroy" %>
