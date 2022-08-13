@@ -35,6 +35,17 @@ class ItemsController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+
+  end
+
+  def edit
+    if @item.user_id == current_user.id && @item.order.nil?
+    else
+      redirect_to root_path
+    end
+  end
+
   private
 
   def item_params
